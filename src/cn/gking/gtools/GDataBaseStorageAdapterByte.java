@@ -1,7 +1,12 @@
 package cn.gking.gtools;
 
 import java.io.*;
-
+/*
+after the reform of getData method,this is not necessary
+Also,it will READ ALL BYTE IN A STREAM EVEN IF IT DONT NEED SUCH DATA
+it is STRONGLY RECOMMENDED to use AdapterStream
+ */
+@Deprecated
 public class GDataBaseStorageAdapterByte implements GDataBaseStorageAdapter {
     int bytesize=0;
     byte[] bytedata;

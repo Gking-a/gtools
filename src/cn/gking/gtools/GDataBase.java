@@ -53,7 +53,7 @@ public class GDataBase {
     }
     public GDataBaseStorageAdapter getIO(){return io==null?null:io.getFile();}
     public void setIOAdapter(GDataBaseStorageAdapter gAdapter){io=new IO(gAdapter);container.io=this.io;}
-    public byte[] getData(Container container){
+    public byte[] getData(){
         List<byte[]> encode = container.encode(null);
         try {
             int bytesize=0;
