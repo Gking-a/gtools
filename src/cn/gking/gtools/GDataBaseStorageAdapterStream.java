@@ -10,6 +10,14 @@ public class GDataBaseStorageAdapterStream implements GDataBaseStorageAdapter {
         this.outputStream = outputStream;
     }
 
+    public void setInputStream(InputStream inputStream) {
+        this.inputStream = inputStream;
+    }
+
+    public void setOutputStream(OutputStream outputStream) {
+        this.outputStream = outputStream;
+    }
+
     @Override
     public InputStream getInputStream() throws FileNotFoundException {
         return inputStream;
@@ -22,5 +30,10 @@ public class GDataBaseStorageAdapterStream implements GDataBaseStorageAdapter {
     @Override
     public boolean create() {
         return outputStream!=null;
+    }
+
+    @Override
+    public boolean delete() {
+        return false;
     }
 }

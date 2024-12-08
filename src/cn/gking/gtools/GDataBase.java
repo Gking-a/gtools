@@ -317,8 +317,9 @@ public class GDataBase {
                     ", tm=" + tm +
                     ", cm=" + cm +
                     ", dm=" + dm +
-                    ", initiated=" + initiated +
+                    ", gm=" + gm +
                     ", io=" + io +
+                    ", initiated=" + initiated +
                     '}';
         }
     }
@@ -376,7 +377,7 @@ public class GDataBase {
             byte[] bs = new byte[1];
             try {
                 for (int i = 0; i < 5; i++) {
-                    if(is.available()<=0){
+                    if(is==null||is.available()<=0){
                         container.sm=new HashMap<>();
                         container.tm=new HashMap<>();
                         container.cm=new HashMap<>();
