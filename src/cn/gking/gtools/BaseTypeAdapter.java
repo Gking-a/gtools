@@ -1,9 +1,6 @@
 package cn.gking.gtools;
 
-import java.io.InputStream;
 import java.nio.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public abstract class BaseTypeAdapter<T> implements GSerialableValue{
     T value;
@@ -132,7 +129,7 @@ public abstract class BaseTypeAdapter<T> implements GSerialableValue{
         long l=0;
         for (int i = 0; i < data.length; i++) {
             long tmp=data[data.length-1-i];
-            l+=tmp<<(i*8);
+            l=l|(tmp<<(i*8));
         }
         return l;
     }
