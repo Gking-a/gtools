@@ -128,8 +128,9 @@ public abstract class BaseTypeAdapter<T> implements GSerialableValue{
     static long tolong(byte[] data){
         long l=0;
         for (int i = 0; i < data.length; i++) {
-            long tmp=data[data.length-1-i];
-            l=l|(tmp<<(i*8));
+            byte tmp=data[data.length-1-i];
+            long tmp2=tmp<0?256+tmp:tmp;
+            l=l|(tmp2<<(i*8));
         }
         return l;
     }
